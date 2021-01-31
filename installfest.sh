@@ -1,5 +1,3 @@
-#!/usr/bin/bash
-
 # Installfest Script for: Amazon Linux image
 # To figure out what Extra Amazon Linux packages has for us
 # use command: $ amazon-linux-extras | grep -i <package>
@@ -18,12 +16,12 @@ sudo yum -y update git \
 
 echo "Updating Python and Node"
 
+sudo amazon-linux-extras install -y python${PYTHON_VERSION} \
+&& sudo rm /usr/bin/python3 && sudo ln -s python${PYTHON_VERSION} /usr/bin/python3
+
 # make nvm available
 source ~/.nvm/nvm.sh
-
-sudo amazon-linux-extras install python${PYTHON_VERSION} \
-&& sudo rm /usr/bin/python3 && sudo ln -s python${PYTHON_VERSION} /usr/bin/python3 \
-&& nvm install ${NODE_VERSION} \
+nvm install ${NODE_VERSION} \
 && npm install -g c9
 
 echo "Installing additional Python packages (global)"
@@ -43,7 +41,7 @@ echo "Attempting to update ~/.bash_profile"
 
 if ! grep -q '# --- CODEPLATOON ADDITIONS ---' "$HOME/.bash_profile"; then
 # If line doesn't already exist. Append these contents into ~/.bash_profile
-cat <<EOT >> $HOME/.bash_profile
+cat <<'EOT' >> $HOME/.bash_profile
 
 # --- CODEPLATOON ADDITIONS ---
 # DO NOT remove comment above if running script multiple times
@@ -64,7 +62,7 @@ alias pymg="python manage.py migrate"
 
 
 parse_git_branch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
 export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$(parse_git_branch) \[\033[00m\]$\[\033[00m\] "

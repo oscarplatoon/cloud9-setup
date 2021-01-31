@@ -53,6 +53,7 @@ Method 2: Use the All Services listing
 ## Next Steps
 We now have a base cloud IDE environment to work from, but we still need to prepare this base environment for all the things we are going to do during class. Much of this we have automated into something called a shell script. We need to get this shell script into our environment to be able to run it.
 
+### The Installfest Script
 Inside your running Cloud9 IDE Window
 
 1. Create a file named `installfest.sh` using the sidebar or console.
@@ -61,11 +62,31 @@ Inside your running Cloud9 IDE Window
 2. Make this file executable using this command: `chmod +x installfest.sh`
 3. In your sidebar click and open `installfest.sh`, you should see an empty file open in the editor view.
 4. Go to [Cloud9-Setup Installfest Script](https://github.com/novemberplatoon/cloud9-setup/blob/main/installfest.sh). Find and Click the **Raw** button.
-5. Highlight and copy ALL the contents on this page. 
-6. Open your Cloud9 IDE window where we should still have our `installfest.sh` file open in Editor view. Paste ALL the contents your copied into this blank file and Save it.
+5. Highlight and **COPY** ALL the contents on this page. 
+6. Open your Cloud9 IDE window where we should still have our `installfest.sh` file open in Editor view. **PASTE** ALL the contents you copied into this `installfest.sh` file and ensure you **SAVE** before continuing.
 
 7. Run command: `./installfest.sh` (this will take a few minutes)
 
 8. When the script finishes you should see `Installfest script finished running!` output to the screen as the very last line. If you do not see this message, reach out to a TA or Instructor.
 
 9. Finally lets run: `source ~/.bash_profile` which should make our current console aware of all these new updates without having to close the console. You should see the console colors subtly change. You shouldn't need to run this again unless you later decide to edit your own `~/.bash_profile`.
+
+### Configuring Git
+We need to configure Git for the first time so there are a few commands we need to run initially.
+
+> **IMPORTANT NOTE**: Since the GitHub API is moving away from using normal passwords YOU MUST first [Create A Personal Access Token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) within your GitHub account.
+>
+> When making it to the step for selecting **Scopes** (permissions for this token) you dont need to enable all of them. At a minimum for the class your token should only need  the permissions listed within: **repo**. Scoping your token's permission to only what it needs is a **GOOD security practice**.
+>
+> **SAVE THIS TOKEN** on your machine or preferrably a password manager if you use one. If you lose this token you will have to re-generate a new one in the same area you use to create them. This token will act as your **password** when prompted in the console by the `git` client.
+
+
+Once reviewing and completing the steps within **IMPORTANT NOTE** above. We can finish our last steps to configure `git`.
+
+In your Cloud9 IDE Console, run the following commands:
+
+1. Run `git config --global credential.helper cache` -- this will enable caching of your credentials within the `git` client for a temporary amount of time (**default: 15mins**). This is so you wont need to type your credentials with every `git` related command when working with private repos within the class.
+
+2. Run `git config --global user.name "Mona Lisa"` -- Replace `Mona Lisa` with at least your first name and last initial, do not remove the quotes. This name will be displayed in Git repos you submit so keep it professional.
+
+3. Run `git config --global user.email "<username>@users.noreply.github.com"` -- Replace `<username>` with your GitHub username. This is provided by GitHub to help mask/hide your REAL email from being displayed on repos you interact with. Though if you dont mind, you can replace this with your actual email. The way listed here is to maintain privacy in case you don't have Email Privacy Enabled in your GitHub settings of your account. This feature is much more important for when you contribute in a Public Repo: Open Source setting. Feel free to read more about [GitHub Email privacy](https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/setting-your-commit-email-address#setting-your-commit-email-address-on-github)
