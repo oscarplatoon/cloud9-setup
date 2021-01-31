@@ -1,6 +1,6 @@
 # AWS Cloud9 Instructions
 
-For our students on Windows, we have a separate setup for you using AWS's Cloud9. Instead of going through virtualization, messing with Bios, and praying that things work, our IDE will be fully browser based with AWS's Cloud9. We estimate that your usage of AWS for Code Platoon will amount to around $20/month- you are responsible for the cost. Let's get started.
+For our students on Windows, we have a separate setup for you using AWS's Cloud9. Instead of enabling virtualization, messing with Bios, and going through Docker, our IDE will be fully browser based with AWS's Cloud9. We estimate that your usage of AWS for Code Platoon will amount to around $20/month- you are responsible for the cost. Let's get started.
 
 0. Sign in or sign up for an [AWS Account](https://portal.aws.amazon.com/billing/signup#/start). 
 
@@ -8,7 +8,7 @@ For our students on Windows, we have a separate setup for you using AWS's Cloud9
 
   <a href="images/c9-1-auth.png" target="_blank"><img src="images/c9-1-auth.png" width="400" height="auto" alt="Console Dashboard"/></a>
 
-2. From here you can either use the search bar in the navigation or you can use the **All Services** listing to look for: `Cloud9`. In the search bar you can simply type: `cloud9` or you can use the **All Listings** dropdown looking for a **Development Tools** category which `Cloud9` will be nested within. Click on the name of the service: `Cloud9`.
+2. From here you can either use the search bar in the navigation or you can use the **All Services** listing to look for: `Cloud9`. In the search bar you can simply type: `Cloud9` or you can use the **All Listings** dropdown looking for a **Development Tools** category which `Cloud9` will be nested within.
 
   Method 1: Use the Search by to find the Service in question.
 
@@ -18,21 +18,21 @@ For our students on Windows, we have a separate setup for you using AWS's Cloud9
 
   <a href="images/c9-2b-category.png" target="_blank"><img src="images/c9-2b-category.png" width="400" height="auto" alt="All Services Categories" /></a>
 
-3. You immediately see a page with a button that says **Create environment**. Click this button.
+3. You'll see a page with a button that says **Create environment**. Click this button.
 
   <a href="images/c9-3-create.png" target="_blank"><img src="images/c9-3-create.png" width="400" height="auto" alt="Cloud9 Service page" /></a>
 
 4. Fill out the two fields with the following:
-- For the **Name** field: `codeplatoon-<cohort-name>` where `<cohort-name>` for example would be something like `novemberplatoon`
+- For the **Name** field: `codeplatoon-<cohort-name>` where `<cohort-name>` is the name of your cohort
 - For the **Description** field: `Development environment for the Code Platoon curriculum`
 
   <a href="images/c9-4-nameinstance.png" target="_blank"><img src="images/c9-4-nameinstance.png" width="400" height="auto" alt="Cloud9 environment create" /></a>
 
-5. For Environment settings, **DO NOT** change. Leave them as is - they should look like the settings in the image below.
+5. For Environment settings, **leave them as is** - they should look like the settings in the image below.
 
   <a href="images/c9-5a-configuration.png" target="_blank"><img src="images/c9-5a-configuration.png" width="400" height="auto" alt="Cloud9 environment settings part 1" /></a>
 
-6. Click the **Next Step** at the bottom leaving all the defaults in place. Ensure you leave **Cost-saving Settings** set to the (default) of 30 minutes. This is Amazon trying to help you protect your Cloud environment and put it to a sleeping state in case you forget to close or stop it from running. You wont be charged any money while your environment is not in use (running).
+6. Click the **Next Step** at the bottom, leaving all the defaults in place. Ensure **Cost-saving Settings** is set to the (default) of 30 minutes. Amazon is trying to help you protect your Cloud environment and put it to a sleeping state in case you forget to close or stop it from running. You wont be charged any money while your environment is not in use.
 
   <a href="images/c9-5b-configuration.png" target="_blank"><img src="images/c9-5b-configuration.png" width="400" height="auto" alt="Cloud9 environment settings part 2" /></a>
 
@@ -44,7 +44,7 @@ For our students on Windows, we have a separate setup for you using AWS's Cloud9
 
   <a href="images/c9-7-setup.png" target="_blank"><img src="images/c9-7-setup.png" width="400" height="auto" alt="Cloud9 review settings" /></a>
 
-9. Once ready our Cloud Environment and IDE will look like this.
+9. Once ready, our Cloud Environment and IDE will look like this.
 
   <a href="images/c9-8-baseenv.png" target="_blank"><img src="images/c9-8-baseenv.png" width="400" height="auto" alt="Cloud9 review settings" /></a>
 
