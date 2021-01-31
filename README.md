@@ -60,7 +60,7 @@ Inside your running Cloud9 IDE Window
    - Alternatively, a console command: `touch installfest.sh`
 2. Make this file executable using this command: `chmod +x installfest.sh`
 3. In your sidebar click and open `installfest.sh`, you should see an empty file open in the editor view.
-4. Go to [Cloud9-Setup Installfest Script](https://github.com/novemberplatoon/cloud9-setup/installfest.sh). Find and Click the **Raw** button.
+4. Go to [Cloud9-Setup Installfest Script](https://github.com/novemberplatoon/cloud9-setup/blob/main/installfest.sh). Find and Click the **Raw** button.
 5. Highlight and copy ALL the contents on this page. 
 6. Open your Cloud9 IDE window where we should still have our `installfest.sh` file open in Editor view. Paste ALL the contents your copied into this blank file and Save it.
 
