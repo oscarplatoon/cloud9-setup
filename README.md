@@ -18,7 +18,7 @@ For our students on Windows, we have a separate setup for you using AWS's Cloud9
 
   <a href="images/c9-2b-category.png" target="_blank"><img src="images/c9-2b-category.png" width="400" height="auto" alt="All Services Categories" /></a>
 
-3. You'll see a page with a button that says **Create environment**. Click this button.
+3. You'll see a page with a button that says **Create environment**. Click the **Create environment** button.
 
   <a href="images/c9-3-create.png" target="_blank"><img src="images/c9-3-create.png" width="400" height="auto" alt="Cloud9 Service page" /></a>
 
