@@ -51,6 +51,20 @@ Method 2: Use the All Services listing
 <a href="images/c9-8-baseenv.png" target="_blank"><img src="images/c9-8-baseenv.png" width="400" height="auto" alt="Cloud9 review settings" /></a>
 
 ## Next Steps
-We now have a base environment to work from but we still need to prep our base environment for all the things we are going to do during this curriculum.
+We now have a base cloud IDE environment to work from, but we still need to prepare this base environment for all the things we are going to do during class. Much of this we have automated into something called a shell script. We need to get this shell script into our environment to be able to run it.
 
-[ link to bash script to update environment ]
+Inside your running Cloud9 IDE Window
+
+1. Create a file named `installfest.sh` using the sidebar or console.
+   - Sidebar: You can "right click" -> Create New File
+   - Alternatively, a console command: `touch installfest.sh`
+2. Make this file executable using this command: `chmod +x installfest.sh`
+3. In your sidebar click and open `installfest.sh`, you should see an empty file open in the editor view.
+4. Go to [Cloud9-Setup Installfest Script](https://github.com/novemberplatoon/cloud9-setup/installfest.sh). Find and Click the **Raw** button.
+5. Highlight and copy ALL the contents on this page. 
+6. Open your Cloud9 IDE window where we should still have our `installfest.sh` file open in Editor view. Paste ALL the contents your copied into this blank file and Save it.
+
+7. Run command: `./installfest.sh` (this will take a few minutes)
+
+8. When the script finishes you should see `Installfest script finished running!` output to the screen as the very last line. If you do not see this message, reach out to a TA or Instructor.
+
