@@ -27,23 +27,22 @@ Method 2: Use the All Services listing
 
 <a href="images/c9-4-nameinstance.png" target="_blank"><img src="images/c9-4-nameinstance.png" width="400" height="auto" alt="Cloud9 environment create" /></a>
 
-5. For Environment settings, DO NOT change. Leave them as is - they should look like the settings in the image below.
+5. For Environment settings, **DO NOT** change. Leave them as is - they should look like the settings in the image below.
 
 <a href="images/c9-5a-configuration.png" target="_blank"><img src="images/c9-5a-configuration.png" width="400" height="auto" alt="Cloud9 environment settings part 1" /></a>
-<a href="images/c9-5b-configuration.png" target="_blank"><img src="images/c9-5b-configuration.png" width="400" height="auto" alt="Cloud9 environment settings part 2" /></a>
 
 6. Click the **Next Step** at the bottom leaving all the defaults in place.
 
 > Ensure you leave **Cost-saving Settings** set to the (default) of 30 minutes. This is Amazon trying to help you protect your Cloud environment and put it to a sleeping state in case you forget to close or stop it from running. You wont be charged any money while your environment is not in use (running).
 
-<a href="images/c9-6-review.png" target="_blank"><img src="images/c9-6-review.png" width="400" height="auto" alt="Cloud9 review settings" /></a>
+<a href="images/c9-5b-configuration.png" target="_blank"><img src="images/c9-5b-configuration.png" width="400" height="auto" alt="Cloud9 environment settings part 2" /></a>
 
 
 7. Review this page, ensure your settings look correct and match besides the **Name** and **Description** that should match with what you entered. If everything looks correct, click the **Create Environment** button at the bottom.
 
-8. Our environment is now being setup and configured. This may take a few minutes to complete.
+<a href="images/c9-6-review.png" target="_blank"><img src="images/c9-6-review.png" width="400" height="auto" alt="Cloud9 review settings" /></a>
 
-![]()
+8. Our environment is now being setup and configured. This may take a few minutes to complete.
 
 <a href="images/c9-7-setup.png" target="_blank"><img src="images/c9-7-setup.png" width="400" height="auto" alt="Cloud9 review settings" /></a>
 
@@ -51,7 +50,7 @@ Method 2: Use the All Services listing
 
 <a href="images/c9-8-baseenv.png" target="_blank"><img src="images/c9-8-baseenv.png" width="400" height="auto" alt="Cloud9 review settings" /></a>
 
-## Next Step
-We now have a base environment to work from but we still need to prep out base environment for all the things we are going to do during this curriculum.
+## Next Steps
+We now have a base environment to work from but we still need to prep our base environment for all the things we are going to do during this curriculum.
 
 [ link to bash script to update environment ]
