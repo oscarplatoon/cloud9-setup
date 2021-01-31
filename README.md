@@ -64,21 +64,11 @@ We've created a base cloud IDE environment to work from and need to install the 
 9. Finally lets run: `source ~/.bash_profile` which should make our current console aware of all these new updates without having to close the console. You should see the console colors subtly change. You shouldn't need to run this again unless you later decide to edit your own `~/.bash_profile`.
 
 ### Configuring Git
-We need to configure Git for the first time so there are a few commands we need to run initially.
-
-> **IMPORTANT NOTE**: Since the GitHub API is moving away from using normal passwords YOU MUST first [Create A Personal Access Token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) within your GitHub account.
->
-> When making it to the step for selecting **Scopes** (permissions for this token) you dont need to enable all of them. At a minimum for the class your token should only need  the permissions listed within: **repo**. Scoping your token's permission to only what it needs is a **GOOD security practice**.
->
-> **SAVE THIS TOKEN** on your machine or preferrably a password manager if you use one. If you lose this token you will have to re-generate a new one in the same area you use to create them. This token will act as your **password** when prompted in the console by the `git` client.
-
-
-Once reviewing and completing the steps within **IMPORTANT NOTE** above. We can finish our last steps to configure `git`.
-
-In your Cloud9 IDE Console, run the following commands:
-
-1. Run `git config --global credential.helper cache` -- this will enable caching of your credentials within the `git` client for a temporary amount of time (**default: 15mins**). This is so you wont need to type your credentials with every `git` related command when working with private repos within the class.
-
-2. Run `git config --global user.name "Mona Lisa"` -- Replace `Mona Lisa` with at least your first name and last initial, do not remove the quotes. This name will be displayed in Git repos you submit so keep it professional.
-
-3. Run `git config --global user.email "<username>@users.noreply.github.com"` -- Replace `<username>` with your GitHub username. This is provided by GitHub to help mask/hide your REAL email from being displayed on repos you interact with. Though if you dont mind, you can replace this with your actual email. The way listed here is to maintain privacy in case you don't have Email Privacy Enabled in your GitHub settings of your account. This feature is much more important for when you contribute in a Public Repo: Open Source setting. Feel free to read more about [GitHub Email privacy](https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/setting-your-commit-email-address#setting-your-commit-email-address-on-github)
+Let's configure Git so that we can clone/push (download/upload) the code for Code Platoon.
+1. Create a [Create A Personal Access Token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) within your GitHub account. 
+  - When you get to **Scopes** (permissions for this token), just enable the permissions listed within: **repo**. Scoping your token's permission to only what it needs is a **GOOD security practice**.
+  - **SAVE THIS TOKEN** on your machine or preferrably, a password manager. Your access token acts as your **password** when you get prompted in the console by the `git` client in a few steps
+2. In your Cloud9 IDE Console, run...
+  - `git config --global credential.helper cache` -- this will enable caching of your credentials within the `git` client so that you don't have to keep entering your username/password repeatedly. 
+  - `git config --global user.name "Your Name"`
+  - `git config --global user.email "<username>@users.noreply.github.com"` -- Replace `<username>` with your GitHub username.
