@@ -38,35 +38,29 @@ For our students on Windows, we have a separate setup for you using AWS's Cloud9
 
 7. Review this page, ensure your settings look correct and match besides the **Name** and **Description** that should match with what you entered. If everything looks correct, click the **Create Environment** button at the bottom.
 
-<a href="images/c9-6-review.png" target="_blank"><img src="images/c9-6-review.png" width="400" height="auto" alt="Cloud9 review settings" /></a>
+  <a href="images/c9-6-review.png" target="_blank"><img src="images/c9-6-review.png" width="400" height="auto" alt="Cloud9 review settings" /></a>
 
 8. Our environment is now being setup and configured. This may take a few minutes to complete.
 
-<a href="images/c9-7-setup.png" target="_blank"><img src="images/c9-7-setup.png" width="400" height="auto" alt="Cloud9 review settings" /></a>
+  <a href="images/c9-7-setup.png" target="_blank"><img src="images/c9-7-setup.png" width="400" height="auto" alt="Cloud9 review settings" /></a>
 
 9. Once ready our Cloud Environment and IDE will look like this.
 
-<a href="images/c9-8-baseenv.png" target="_blank"><img src="images/c9-8-baseenv.png" width="400" height="auto" alt="Cloud9 review settings" /></a>
+  <a href="images/c9-8-baseenv.png" target="_blank"><img src="images/c9-8-baseenv.png" width="400" height="auto" alt="Cloud9 review settings" /></a>
 
-## Next Steps
-We now have a base cloud IDE environment to work from, but we still need to prepare this base environment for all the things we are going to do during class. Much of this we have automated into something called a shell script. We need to get this shell script into our environment to be able to run it.
-
-### The Installfest Script
-Inside your running Cloud9 IDE Window
+## Installing Software
+We've created a base cloud IDE environment to work from and need to install the necessary software for our class. In this section, we're going to execute a shell script. Inside your running Cloud9 IDE Window:
 
 1. Create a file named `installfest.sh` using the sidebar or console.
    - Sidebar: You can "right click" -> Create New File
    - Alternatively, a console command: `touch installfest.sh`
 2. Make this file executable using this command: `chmod +x installfest.sh`
 3. In your sidebar click and open `installfest.sh`, you should see an empty file open in the editor view.
-4. Go to [Cloud9-Setup Installfest Script](https://github.com/novemberplatoon/cloud9-setup/blob/main/installfest.sh). Find and Click the **Raw** button.
+4. Go to Code Platoon's [Cloud9-Setup Installfest Script](https://github.com/novemberplatoon/cloud9-setup/blob/main/installfest.sh). Find and Click the **Raw** button.
 5. Highlight and **COPY** ALL the contents on this page. 
 6. Open your Cloud9 IDE window where we should still have our `installfest.sh` file open in Editor view. **PASTE** ALL the contents you copied into this `installfest.sh` file and ensure you **SAVE** before continuing.
-
-7. Run command: `./installfest.sh` (this will take a few minutes)
-
+7. Run the command: `./installfest.sh` (this will take a few minutes)
 8. When the script finishes you should see `Installfest script finished running!` output to the screen as the very last line. If you do not see this message, reach out to a TA or Instructor.
-
 9. Finally lets run: `source ~/.bash_profile` which should make our current console aware of all these new updates without having to close the console. You should see the console colors subtly change. You shouldn't need to run this again unless you later decide to edit your own `~/.bash_profile`.
 
 ### Configuring Git
