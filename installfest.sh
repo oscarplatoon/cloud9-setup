@@ -10,20 +10,21 @@ PGCLIENT_VERSION=11
 
 echo "Installing/updating packages into environment (git, psql)"
 
-# Install missing packages and update existing.
+# # Install missing packages and update existing.
 sudo yum -y update git \
 && sudo amazon-linux-extras install postgresql${PGCLIENT_VERSION} -y \
+&& sudo yum -y install postgresql-devel \
 && git config --global alias.lola "log --graph --decorate --pretty=oneline --abbrev-commit --all"
 
-
 echo "Updating Python and Node"
+
+# make nvm available
+source ~/.nvm/nvm.sh
+
 sudo amazon-linux-extras install python${PYTHON_VERSION} \
 && sudo rm /usr/bin/python3 && sudo ln -s python${PYTHON_VERSION} /usr/bin/python3 \
-&& nvm install ${NODE_VERSION}
+&& nvm install ${NODE_VERSION} \
 && npm install -g c9
-# && nvm use ${NODE_VERSION}
-# && nvm alias default v${NODE_VERSION}
-
 
 echo "Installing additional Python packages (global)"
 # Install User global third party packages needed (before virtual envs are used)
@@ -40,14 +41,27 @@ echo -e "\033[0;32mInstallfest Environment packages updated!\033[0m"
 
 echo "Attempting to update ~/.bash_profile"
 
-# Append these contents into ~/.bash_profile
-
-if ! grep -q '# --- CODEPLATOON ADDITIONS ---' "./.bash_prof"; then
-cat <<EOT >> .bash_prof
+if ! grep -q '# --- CODEPLATOON ADDITIONS ---' "$HOME/.bash_profile"; then
+# If line doesn't already exist. Append these contents into ~/.bash_profile
+cat <<EOT >> $HOME/.bash_profile
 
 # --- CODEPLATOON ADDITIONS ---
 # DO NOT remove comment above if running script multiple times
 # It will continuously append duplicate lines.
+
+# Executable versions
+alias allversions="git --version && echo -n 'node: '; echo $(node --version) && echo -n 'npm: '; echo $(npm --version) && python --version && psql --version"
+
+# Python aliases
+alias python=python3
+alias pip=pip3
+alias activate="source ./venv/bin/activate"
+
+# Django aliases
+alias pyrs="python manage.py runserver 127.0.0.1:8080"
+alias pymk="python manage.py makemigrations"
+alias pymg="python manage.py migrate"
+
 
 parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
@@ -68,7 +82,9 @@ export VIRTUALENVWRAPPER_HOOK_DIR=$WORKON_HOME/hooks
 source $(which virtualenvwrapper.sh) > /dev/null 2>&1
 # --- END OF CODEPLATOON ADDITIONS ---
 EOT
+
 echo -e "\033[0;36mInstallfest script finished running!\033[0m"
+
 else
     echo -e "\033[1;31m~/.bash_profile has been updated already."
     echo -e "You must remove all lines in ~/.bash_profile between CODEPLATOON ADDITIONS including the comments to re-run this script\033[0m"

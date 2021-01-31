@@ -68,3 +68,4 @@ Inside your running Cloud9 IDE Window
 
 8. When the script finishes you should see `Installfest script finished running!` output to the screen as the very last line. If you do not see this message, reach out to a TA or Instructor.
 
+9. Finally lets run: `source ~/.bash_profile` which should make our current console aware of all these new updates without having to close the console. You should see the console colors subtly change. You shouldn't need to run this again unless you later decide to edit your own `~/.bash_profile`.
