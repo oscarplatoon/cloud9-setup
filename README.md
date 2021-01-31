@@ -1,6 +1,6 @@
 # AWS Cloud9 Instructions
 
-For our students on Windows, we have a separate setup for you using AWS's Cloud9. Instead of going through virtualization, messing with Bios, and praying that things work, we're going to be fully browser based with AWS's Cloud9. If you haven't already done so you will need to [Create an AWS Account](https://portal.aws.amazon.com/billing/signup#/start) or go ahead an [Sign In to the Console](https://signin.aws.amazon.com) by clicking the button in the top right corner of the navigation bar.
+For our students on Windows, we have a separate setup for you using AWS's Cloud9. Instead of going through virtualization, messing with Bios, and praying that things work, our IDE will be fully browser based with AWS's Cloud9. We estimate that your usage of AWS for Code Platoon will amount to around $20/month- you are responsible for the cost. To get started, please sign in or sign up for an [AWS Account](https://portal.aws.amazon.com/billing/signup#/start). 
 
 1. After successfully creating your account or signing in you want to Sign in to the [AWS Console](https://aws.amazon.com/console/). This is your dashboard to access any of the AWS Services.
 
