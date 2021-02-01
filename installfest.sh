@@ -8,7 +8,7 @@ PGCLIENT_VERSION=11
 
 echo "Installing/updating packages into environment (git, psql)"
 
-# # Install missing packages and update existing.
+# Install missing packages and update existing.
 sudo yum -y update git \
 && sudo amazon-linux-extras install postgresql${PGCLIENT_VERSION} -y \
 && sudo yum -y install postgresql-devel \
@@ -23,6 +23,16 @@ sudo amazon-linux-extras install -y python${PYTHON_VERSION} \
 source ~/.nvm/nvm.sh
 nvm install ${NODE_VERSION} \
 && npm install -g c9
+
+# Install and setup Postgres for this user.
+echo "Installing and setting up Postgresql"
+sudo yum install -y postgresql postgresql-server postgresql-devel postgresql-contrib postgresql-docs \
+&& sudo /usr/bin/postgresql-setup --initdb --unit postgresql \
+&& sudo service postgresql start
+
+sudo -u postgres createuser -s $USER \
+&& sudo -u postgres createdb $USER -O $USER
+
 
 echo "Installing additional Python packages (global)"
 # Install User global third party packages needed (before virtual envs are used)
@@ -65,7 +75,7 @@ parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
-export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$(parse_git_branch) \[\033[00m\]$\[\033[00m\] "
+export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]codeplatoon:\[\033[33;1m\]\w\[\033[m\]\$(parse_git_branch) \[\033[00m\]$\[\033[00m\] "
 export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
@@ -78,6 +88,13 @@ export VIRTUALENVWRAPPER_VIRTUALENV=$(which virtualenv)
 export VIRTUALENVWRAPPER_SCRIPT=$(which virtualenvwrapper.sh)
 export VIRTUALENVWRAPPER_HOOK_DIR=$WORKON_HOME/hooks
 source $(which virtualenvwrapper.sh) > /dev/null 2>&1
+
+# Hack around cloud9 hibernating which stops postgresql service.
+
+if ! pg_isready -q;
+then
+  sudo service postgresql start
+fi
 # --- END OF CODEPLATOON ADDITIONS ---
 EOT
 
