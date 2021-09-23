@@ -65,10 +65,15 @@ We've created a base cloud IDE environment to work from and need to install the 
 
 ### Configuring Git
 Let's configure Git so that we can clone/push (download/upload) the code for Code Platoon.
-1. Create a [Create A Personal Access Token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) within your GitHub account. 
-  - When you get to **Scopes** (permissions for this token), just enable the permissions listed within: **repo**. Scoping your token's permission to only what it needs is a **GOOD security practice**.
-  - **SAVE THIS TOKEN** on your machine or preferrably, a password manager. Your access token acts as your **password** when you get prompted in the console by the `git` client in a few steps
-2. In your Cloud9 IDE Console, run...
-  - `git config --global credential.helper cache` -- this will enable caching of your credentials within the `git` client so that you don't have to keep entering your username/password repeatedly. 
-  - `git config --global user.name "Your Name"`
-  - `git config --global user.email "<username>@users.noreply.github.com"` -- Replace `<username>` with your GitHub username.
+1. Set up your command line Git [username](https://help.github.com/articles/setting-your-username-in-git/)
+2. Set up your command line Git user [email](https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/managing-email-preferences/setting-your-commit-email-address#setting-your-commit-email-address-in-git)
+3. Cache your Github [password](https://help.github.com/articles/caching-your-github-password-in-git/) so that you don't have to type it in every single time you push to Github
+
+Finally, ensure that VSCode is your global text editor for all things Git:
+
+```sh
+$ git config --global core.editor "code -n -w"
+```
+
+Confirm `gitconfig` is set up, both for your username/email and gitignore by running `git config --global -l`
+You should see that your username, email, gitignore, and editor are all listed.
